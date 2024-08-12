@@ -1,0 +1,32 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+bin/
+include/
+lib/
+share/
+pyvenv.cfg
+
+# Environment Variables
+.env
+
+# Config files containing sensitive information
+config.py
+
+# SQLite Database
+*.db
+
+# Logs
+*.log
+
+# IDE/Editor specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db

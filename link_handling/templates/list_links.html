@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src={{ url_for('link_short_bp.static', filename='js/table.js') }}></script>
+    <title>URL Table</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 20px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.75em;
+            text-align: start;
+        }
+        .navbar p{
+            cursor: pointer;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button.remove-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        button.remove-btn:hover {
+            background-color: darkred;
+        }
+        .originalLinkCol{
+            width: 40%;
+        }
+        .link-remove{
+            cursor: pointer;
+        }
+        #no-info-data{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .userprofile{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }       
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="navbar">
+            <h1>URL Shortner</h1>
+            <div class="userprofile">
+            <p><a href="/urlshort">Home</a></p>
+            <p><a href="/urlshort/list">My Links</a></p>
+            <p id="logged_one"></p>
+            <p id="log-out" onclick="logout_call()">Log Out</p>
+            </div>
+        </div>
+        <div id="no-info-data"><div class="message"><h2>No data!!</h2></div></div>
+        <table id="user-data-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Long URL</th>
+                    <th>Short URL</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table body is populated through API call -->
+            </tbody>
+        </table>
+    </div>
+   
+</body>
+</html>

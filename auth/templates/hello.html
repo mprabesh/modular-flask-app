@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 10px 20px;
+            color: #fff;
+            text-align: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 24px;
+            text-align: start;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            height: calc(100vh - 60px); /* Adjust height based on the navbar height */
+        }
+        .form-input-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group{
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          padding: 12px;
+        }
+        .form-group input {
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.25em;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        .form-actions {
+            text-align: center;
+        }
+        .create-account{
+          padding: 12px 0px;
+        }
+        .form-actions button, .create-account button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.25em;
+        }
+        .form-actions button:hover, .create-account button:hover {
+            background-color: #0056b3;
+        }
+        .forgot-password{
+          text-align: center;
+          font-weight: bold;
+          cursor: pointer;
+          color: #0056b3;
+        }
+        .error-show{
+          color: red;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <h1>URL Shortner</h1>
+    </div>
+
+    <div class="content">
+      <div class="form-input-box">
+        <form class="login-form" method="post" action="#">
+          <h2>Login</h2>
+          <div class="form-group">
+              <input type="text" id="username" placeholder="Username" name="username" autocomplete="off" required>
+          </div>
+          <div class="form-group">
+              <input type="password" id="password" placeholder="Password" name="password" autocomplete="off" required>
+          </div>
+          <div id="error-text" class="error-show" hidden="true">
+            <p>Wrong credentials</p>
+          </div>
+          <div class="form-actions">
+              <button type="button" onclick="apple()">Login</button>
+          </div>
+      </form>
+      <div class="forgot-password">
+        <p>Forgot password?</p>
+      </div>
+      <div class="hr-line">
+        <hr>
+      </div>
+      <div class="create-account">
+        <button type="button" id="go-to-register">Create new account</button>
+      </div>
+      </div>
+    </div>
+    <div class="footer">
+      &copy; 2024 URL Shortner
+  </div>
+  <script src={{ url_for('auth_bp.static', filename='js/login.js') }}>
+  </script>
+</body>
+</html>
