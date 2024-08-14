@@ -50,5 +50,15 @@ Flask a Python framework and SQlite for the purpose of storing the data.
 
 ***`init_db.py` file is present to initialize database entities. Run this script at first***
 
+***API Endpoints***
+
+POST http://127.0.0.1:5000/api/url/ --> generates the short URL </br>
+GET http://127.0.0.1:5000/api/url/<username> --> gets all the URLs shorted by user <username> </br>
+DELETE http://127.0.0.1:5000/api/url/<URL_ID> --> deletes the URL with id URL_ID </br>
+
+GET http://127.0.0.1:5000/api/users/ --> Get all the user information from a database </br>
+POST http://127.0.0.1:5000/api/users/ --> register user </br>
+POST http://127.0.0.1:5000/api/auth/login --> login API </br>
+
 
 
